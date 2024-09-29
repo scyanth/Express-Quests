@@ -1,6 +1,7 @@
 const app = require("./src/app");
+require("dotenv").config();
 
-const port = 5000;
+const port = process.env.SRV_PORT;
 
 app
   .listen(port, () => {
@@ -8,4 +9,4 @@ app
   })
   .on("error", (err) => {
     console.error("Error:", err.message);
-  });
+});
